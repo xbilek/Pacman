@@ -1,3 +1,8 @@
+/**
+ * Obashuuje třídu GhostObject, reprezentující objekt ducha
+ * @author Štěpán Bílek (xbilek25)
+ * @author Jakub Kořínek (xkorin17)
+ */
 package game;
 
 import tool.common.CommonField;
@@ -10,17 +15,41 @@ import javax.swing.*;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
+/**
+ * Třída GhostObject, reprezentující objekt ducha
+ */
 public class GhostObject implements CommonMazeObject {
+
+    /**
+     * Attribut representující řadu, kde se duch vyskytuje
+     */
     private int row;
+    /**
+     * Attribut representující sloupec, kde se duch vyskytuje
+     */
     private int col;
+    /**
+     * Attribut representující bludiště, kde se duch vyskytuje
+     */
     public CommonMaze maze;
+
     private JFrame frame;
     private int hits;
+    /**
+     * Konstruktor pro vytvořeni instance.
+     * @param col sloupec, kde se duch nachází
+     * @param row řádek, kde se duch nachází
+     * @param maze bludiště, kde se duch nachází
+     */
     public GhostObject(int row, int col, CommonMaze maze) {
         this.row = row;
         this.col = col;
         this.maze = maze;
     }
+    /**
+     * Metoda, vrací informaci o tom, zda se může duch pohnout daným směrem.
+     * @param direction směr, do kterého se chce duch pohnout
+     */
     @Override
     public boolean canMove(CommonField.Direction direction) {
         // v cíli je jiný duch
@@ -29,6 +58,10 @@ public class GhostObject implements CommonMazeObject {
         return this.maze.getField(this.row, this.col).nextField(direction).canMove();
     }
 
+    /**
+     * Metoda, přesouvající objekt daným směrem
+     * @param direction směr, do kterého se objekt pohne
+     */
     @Override
     public boolean move(CommonField.Direction direction) {
         CommonField targetField = this.maze.getField(this.row, this.col).nextField(direction);
@@ -91,30 +124,47 @@ public class GhostObject implements CommonMazeObject {
         return false;
     }
 
+
     @Override
     public boolean isPacman() {
         return false;
     }
+
 
     @Override
     public boolean isTarget(){
         return false;
     }
 
+    /**
+     * Metoda, vrací pole, na kterém se duch nachází
+     * @return pole, na kterém se duch nachází
+     */
     @Override
     public CommonField getField() {
         return this.maze.getField(this.row, this.col);
     }
 
+    /**
+     * Metoda, počet případů, kdy duch zasáhl pacmana
+     * @return počet případů, kdy duch zasáhl pacmana
+     */
     @Override
     public int getLives() {
         return this.hits;
     }
 
+    /**
+     * Metoda, ubere život Pacmanovi
+     */
     @Override
     public void damage(int d) {
         this.hits -= d;
     }
+    /**
+     * Metoda, která nastaví okno, ve kterém hra probíhá
+     * @param frame okno, ve kterém hra probíhá
+     */
     @Override
     public void setFrame(JFrame frame){
         this.frame = frame;

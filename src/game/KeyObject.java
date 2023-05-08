@@ -1,3 +1,8 @@
+/**
+ * Obashuuje třídu KeyObject, reprezentující objekt klíče
+ * @author Štěpán Bílek (xbilek25)
+ * @author Jakub Kořínek (xkorin17)
+ */
 package game;
 
 import tool.common.CommonField;
@@ -8,12 +13,20 @@ import tool.view.FieldView;
 
 import javax.swing.*;
 
-
+/**
+ * Třída KeyObject, reprezentující objekt klíče
+ */
 public class KeyObject implements CommonMazeObject {
     private int row;
     private int col;
     public CommonMaze maze;
 
+    /**
+     * Konstruktor pro vytvořeni instance.
+     * @param col sloupec, kde se klíč nachází
+     * @param row řádek, kde se klíč nachází
+     * @param maze bludiště, kde se klíč nachází
+     */
     public KeyObject(int row, int col, CommonMaze maze) {
         this.row = row;
         this.col = col;
@@ -40,6 +53,10 @@ public class KeyObject implements CommonMazeObject {
         return false;
     }
 
+    /**
+     * Metoda, vrací informaci o tom, že je objekt klíč
+     * @return informace o tom, že je objekt klíč
+     */
     @Override
     public boolean isKey() {return true;}
     @Override
