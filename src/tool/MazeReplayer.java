@@ -1,3 +1,10 @@
+/**
+ * MazeReplayer slouží k přehrání odehrané hry.
+ *
+ * @author Jakub Kořínek
+ * @author Štěpán Bílek
+ */
+
 package tool;
 
 import game.MazeConfigure;
@@ -42,6 +49,10 @@ public class MazeReplayer {
             return;
         }
     }
+
+    /**
+     * Funkce spustí nové vlákno a přehraje hru.
+     */
     public void startReplay(){
         Thread t = new Thread(new Runnable() {
             public void run() {
@@ -115,6 +126,9 @@ public class MazeReplayer {
 
     }
 
+    /**
+     * Funkce inicializuje rozhraní přehrávače.
+     */
     private void initializeInterface() {
 
         this.frame = new JFrame("Replay");
@@ -132,6 +146,10 @@ public class MazeReplayer {
 
         startReplay();
     }
+
+    /**
+     * Funkce zjistí počet sloupců a řádků pro přehrávač.
+     */
     private void setRowsCols(){
         try {
 
@@ -146,6 +164,11 @@ public class MazeReplayer {
             return;
         }
     }
+
+    /**
+     * Uspání vlákna.
+     * @param ms doba uspání.
+     */
     public static void sleep(int ms) {
         try {
             Thread.sleep(ms);

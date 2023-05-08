@@ -1,4 +1,9 @@
-
+/**
+ * Hlavní třída, která spustí menu aplikace.
+ *
+ * @author Jakub Kořínek
+ * @author Štěpán Bílek
+ */
 
 import tool.Menu;
 
