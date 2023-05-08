@@ -1,3 +1,10 @@
+/**
+ * Třída popisující hlavní okno aplikace.
+ *
+ * @author Jakub Kořínek
+ * @author Štěpán Bílek
+ */
+
 package tool;
 
 import game.MazeConfigure;
@@ -42,10 +49,18 @@ public class Menu implements ActionListener {
 
     }
 
+    /**
+     * Funkce slouží pro uložení cesty k mapě, kterou chceme načíst.
+     *
+     * @return cesta k mapě
+     */
     public String get_file(){
         return this.file;
     }
 
+    /**
+     * Funkce Inicializuje rozhrani menu.
+     */
     private void initializeInterface() {
         this.frame = new JFrame("Pacman Menu");
         this.frame.setDefaultCloseOperation(3);
@@ -71,6 +86,12 @@ public class Menu implements ActionListener {
         this.frame.setLayout(null);
         this.frame.setVisible(true);
     }
+
+    /**
+     * Funkce zpracuje stisknutí tlačítek.
+     *
+     * @param e Událost ke zpracování.
+     */
     @Override
     public void actionPerformed(ActionEvent e){
         switch (e.getActionCommand()){

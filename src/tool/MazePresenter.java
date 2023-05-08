@@ -1,3 +1,10 @@
+/**
+ * Modul reprezentující samotnou hru.
+ *
+ * @author Jakub Kořínek
+ * @author Štěpán Bílek
+ */
+
 package tool;
 
 import tool.common.CommonField;
@@ -24,6 +31,10 @@ public class MazePresenter {
         startGhosts();
     }
 
+    /**
+     * Funkce spustí odpovídající počet vláken pro každého ducha.
+     * Probíhá náhodný pohyb.
+     */
     private void startGhosts(){
         CommonMazeObject pac = maze.getPacman();
 
@@ -68,6 +79,9 @@ public class MazePresenter {
 
     }
 
+    /**
+     * Inicializace rozhraní hry.
+     */
     private void initializeInterface() {
         this.frame = new JFrame("Pacman");
         this.pacmanObj.setFrame(frame);
@@ -99,6 +113,10 @@ public class MazePresenter {
         frame.setVisible(true);
     }
 
+    /**
+     * Uspání vlákna.
+     * @param ms Doba uspání.
+     */
     public static void sleep(int ms) {
         try {
             Thread.sleep(ms);
