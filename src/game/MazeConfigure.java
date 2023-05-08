@@ -21,6 +21,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Třída MazeConfigure, reprezentující metody pro vytvoření bludiště
+ */
 public class MazeConfigure implements CommonMaze{
     private int cols;
     private int rows;
