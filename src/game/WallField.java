@@ -1,11 +1,24 @@
+/**
+ * Obashuuje třídu WallField, pole obsahující zeď
+ * @author Štěpán Bílek (xbilek25)
+ * @author Jakub Kořínek (xkorin17)
+ */
 package game;
 
 import tool.common.CommonField;
 import tool.common.CommonMazeObject;
 
+/**
+ * Třída PathField, reprezentující objekt pole obsahující zeď
+ */
 public class WallField implements CommonField{
     private int col;
     private int row;
+    /**
+     * Konstruktor pro vytvořeni instance.
+     * @param col sloupec, kde se zeď nachází
+     * @param row řádek, kde se zeď nachází
+     */
     public WallField(int row, int col){
         this.col = col;
         this.row = row;

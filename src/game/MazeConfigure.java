@@ -1,3 +1,8 @@
+/**
+ * Obashuuje třídu MazeConfigure, která implementuje metody pro vytvoření bludiště
+ * @author Štěpán Bílek (xbilek25)
+ * @author Jakub Kořínek (xkorin17)
+ */
 package game;
 
 import tool.common.CommonField;
@@ -16,6 +21,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Třída MazeConfigure, reprezentující metody pro vytvoření bludiště
+ */
 public class MazeConfigure implements CommonMaze{
     private int cols;
     private int rows;
@@ -44,6 +53,10 @@ public class MazeConfigure implements CommonMaze{
 
 
     private List<CommonMazeObject> ghostsList = new ArrayList<>();
+
+    /**
+     * Metoda, zkontroluje zda odpovídají zadané rozměry bludišti a naplní první řádek zdmi
+     */
     public void startReading(int rows, int cols){
         this.cols = cols + 2;
         this.expected_cols = cols;
@@ -60,6 +73,10 @@ public class MazeConfigure implements CommonMaze{
         }
         this.current_row++; //current_row == 1
     }
+
+    /**
+     * Metoda, zpracuje všechny řádky bludiště a naplní ho poli a objekty
+     */
     public boolean processLine(String line){
         if (line.length() != this.expected_cols){
             wrong_cols = true;
@@ -134,6 +151,11 @@ public class MazeConfigure implements CommonMaze{
         this.current_row++;
         return true;
     }
+
+    /**
+     * Metoda, naplní poslední řádek zdmi
+     * @return informace o tom, že načtení proběhlo v pořádku
+     */
     public boolean stopReading(){
         //naplnění posledního řádku
         for (int i = 0; i < this.cols; i++){
@@ -142,49 +164,99 @@ public class MazeConfigure implements CommonMaze{
         this.current_row--;
         return true;
     }
+
+    /**
+     * Metoda,vytvoří bludiště
+     * @return vytovořené bludiště
+     */
     public CommonMaze createMaze(){
         if (this.current_row == this.expected_rows && !wrong_cols)
             return this;
         else
             return null;
     }
+
+    /**
+     * Metoda, vrací pole v bludišti
+     * @param x souřadnice x
+     * @param y souřadnice y
+     * @return pole na daných souřadnících
+     */
     @Override
     public CommonField getField(int x, int y) {
         return this.board[x][y];
     }
+
+    /**
+     * Metoda, vrací počet řádku bludiště
+     * @return počet řádků bludiště
+     */
     @Override
     public int numRows() {
         return this.rows;
     }
+
+    /**
+     * Metoda, vrací počet sloupců bludiště
+     * @return počet sloupců bludiště
+     */
     @Override
     public int numCols() {
         return this.cols;
     }
+
+    /**
+     * Metoda, vrací seznam duchů v bludišti
+     * @return seznam duchů
+     */
     @Override
     public List<CommonMazeObject> ghosts() {
             List<CommonMazeObject> copy = new ArrayList(this.ghostsList);
         return copy;
     }
 
+    /**
+     * Metoda, vrací informaci o tom, zda hra skončila
+     * @return informace o tom, že hra skončila
+     */
     public boolean gameDone(){
         return gameDoneFlag;
     }
 
+    /**
+     * Metoda, nastavuje informaci o tom, že hra skončila
+     */
     public void setDone(){
         this.gameDoneFlag = true;
     }
+
+    /**
+     * Metoda, vrací objekt pacmana
+     * @return objekt pacmana
+     */
     @Override
     public PacmanObject getPacman() {
         return Pacman;
     }
 
+    /**
+     * Metoda, vrací objekt cíle
+     * @return objekt cíle
+     */
     @Override
     public TargetObject getTarget() {
         return Target;
     }
 
+    /**
+     * Metoda, vrací objekt klíče
+     * @return objekt klíče
+     */
     public KeyObject getKey() {return Key;}
 
+    /**
+     * Metoda, uloží aktuální stav bludiště do logovacího souboru
+     */
     public void saveMaze(){
         try {
             File newSave = new File("data/save.txt");
@@ -211,6 +283,9 @@ public class MazeConfigure implements CommonMaze{
         }
     }
 
+    /**
+     * Zpracuje řádek bludiště pro uložení do logovacího souboru
+     */
     public String getLine(){
         String line = "";
         for(int i = 1; i < this.cols - 1; i++){

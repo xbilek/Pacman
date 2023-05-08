@@ -1,3 +1,8 @@
+/**
+ * Obashuuje třídu GhostObject, reprezentující objekt pacmana
+ * @author Štěpán Bílek (xbilek25)
+ * @author Jakub Kořínek (xkorin17)
+ */
 package game;
 
 import tool.common.CommonField;
@@ -9,6 +14,9 @@ import javax.swing.*;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
+/**
+ * Třída PacmanObject, reprezentující objekt Pacmana
+ */
 public class PacmanObject implements CommonMazeObject {
     private int row;
     private int col;
@@ -20,6 +28,13 @@ public class PacmanObject implements CommonMazeObject {
 
     private int lives;
 
+
+    /**
+     * Konstruktor pro vytvořeni instance.
+     * @param col sloupec, kde se pacman nachází
+     * @param row řádek, kde se pacman nachází
+     * @param maze bludiště, kde se pacman nachází
+     */
     public PacmanObject(int row, int col, CommonMaze maze) {
         this.row = row;
         this.col = col;
@@ -96,7 +111,10 @@ public class PacmanObject implements CommonMazeObject {
         return this.lives;
     }
 
-
+    /**
+     * Metoda, zajišťující automaticky pohyb pacmana
+     * @param key klávesa určující směr, do kterým se chce pacman pohybovat
+     * */
     public void dirToMove(char key) {
         Runnable moveRunnable = new Runnable() {
             public void run() {
@@ -156,9 +174,16 @@ public class PacmanObject implements CommonMazeObject {
             this.lives -= d;
     }
 
+    /**
+     * Metoda, nastavující informaci o tom, že pacman potřebuje klíč
+     */
     public void detectKey(){
         this.needsKey = true;
     }
+
+    /**
+     * Metoda, nastavující informaci o tom, že pacman může vyhrát
+     */
     public boolean canWin(){
         return !this.needsKey;
     }
