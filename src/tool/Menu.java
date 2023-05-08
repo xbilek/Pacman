@@ -29,6 +29,9 @@ import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 import static javax.swing.JOptionPane.showMessageDialog;
 
+/**
+ * Třída popisující hlavní okno aplikace.
+ */
 public class Menu implements ActionListener {
     private JFrame frame;
     private boolean file_chosen;

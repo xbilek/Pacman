@@ -21,6 +21,9 @@ import javax.swing.*;
 
 import game.NewKeyListener;
 
+/**
+ * Třída reprezentující hrací pole a hraní.
+ */
 public class MazePresenter {
     private final CommonMaze maze;
     private CommonMazeObject pacmanObj;

@@ -19,6 +19,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Vizuální reprezentace pacmana.
+ */
 public class PacmanView implements ComponentView {
     private CommonMazeObject model;
     private FieldView parent;

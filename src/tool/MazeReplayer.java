@@ -25,6 +25,9 @@ import javax.swing.SwingUtilities;
 import game.NewKeyListener;
 import game.PathField;
 
+/**
+ * MazeReplayer slouží k přehrání odehrané hry.
+ */
 public class MazeReplayer {
     private CommonMaze maze;
     private CommonMazeObject pacmanObj;

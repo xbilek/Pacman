@@ -7,6 +7,9 @@
 
 package tool.common;
 
+/**
+ * Rozhraní reprezentuje objekty, které mohou notifikovat observers o změnách.
+ */
 public interface Observable {
     /**
      * Registrace nového observeru.

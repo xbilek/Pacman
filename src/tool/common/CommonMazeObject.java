@@ -9,6 +9,9 @@ package tool.common;
 
 import javax.swing.*;
 
+/**
+ * Rozhraní pro hratelné objekty.
+ */
 public interface CommonMazeObject {
     /**
      * Funcke zjistí, jestli se objekt smí pohnout zadaným směrem.

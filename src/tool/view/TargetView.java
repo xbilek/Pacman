@@ -20,6 +20,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Vizuální reprezentace cíle.
+ */
 public class TargetView implements ComponentView {
     private CommonMazeObject model;
     private FieldView parent;

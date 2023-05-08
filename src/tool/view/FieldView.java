@@ -17,6 +17,9 @@ import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 
+/**
+ * Vizuální reprezentace políčka.
+ */
 public class FieldView extends JPanel implements Observable.Observer {
     private final CommonField model;
     private final List<ComponentView> objects;

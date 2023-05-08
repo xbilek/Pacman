@@ -7,6 +7,9 @@
 
 package tool.common;
 
+/**
+ * Rozhraní pro políčko bludiště.
+ */
 public interface CommonField extends Observable {
     /**
      * Funkce pro zjištění sousedního políčka tohoto pole.

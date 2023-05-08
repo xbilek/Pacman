@@ -9,6 +9,9 @@ package tool.common;
 
 import java.util.List;
 
+/**
+ * Rozhraní pro hrací bludiště.
+ */
 public interface CommonMaze {
     /**
      * Funkce pro získání konkrétního pole bludiště.

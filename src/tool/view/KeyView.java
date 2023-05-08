@@ -19,6 +19,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Vizuální reprezentace klíče..
+ */
 public class KeyView implements ComponentView {
     private final CommonMazeObject model;
     private final FieldView parent;

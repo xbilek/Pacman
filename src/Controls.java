@@ -7,6 +7,9 @@
 
 import tool.Menu;
 
+/**
+ * Hlavní třída.
+ */
 public class Controls {
     public static void main(String... args) {
 

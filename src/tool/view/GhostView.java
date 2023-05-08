@@ -15,6 +15,9 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Vizuální reprezentace ducha.
+ */
 public class GhostView implements ComponentView {
     private final CommonMazeObject model;
     private final FieldView parent;
