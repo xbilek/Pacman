@@ -49,7 +49,7 @@ public class TargetView implements ComponentView {
 
         try {
             // Načtení obrázku klíče z disku
-            image = ImageIO.read(new File("data/img/target.png"));
+            image = ImageIO.read(new File("lib/img/target.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
