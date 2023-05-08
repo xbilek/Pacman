@@ -1,3 +1,10 @@
+/**
+ * Modul reprezentuje vzhled cíle v poli.
+ *
+ * @author Jakub Kořínek
+ * @author Štěpán Bílek
+ */
+
 package tool.view;
 
 import tool.common.CommonMazeObject;
@@ -22,6 +29,10 @@ public class TargetView implements ComponentView {
         this.parent = parent;
     }
 
+    /**
+     * Funkce vykreslí cíl do mapy.
+     * @param g Vykreslovač.
+     */
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D)g;
         Rectangle bounds = this.parent.getBounds();

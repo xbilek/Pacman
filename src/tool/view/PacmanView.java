@@ -1,3 +1,10 @@
+/**
+ * Modul reprezentuje vzhled Pacmana v poli.
+ *
+ * @author Jakub Kořínek
+ * @author Štěpán Bílek
+ */
+
 package tool.view;
 
 import tool.common.CommonMazeObject;

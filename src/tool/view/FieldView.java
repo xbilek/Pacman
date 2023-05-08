@@ -1,4 +1,9 @@
-
+/**
+ * Modul reprezentuje vzhled cesty a zdi v poli.
+ *
+ * @author Jakub Kořínek
+ * @author Štěpán Bílek
+ */
 
 package tool.view;
 
