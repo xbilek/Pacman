@@ -44,7 +44,7 @@ public class KeyView implements ComponentView {
 
         try {
             // Načtení obrázku klíče z disku
-            image = ImageIO.read(new File("data/img/key.png"));
+            image = ImageIO.read(new File("lib/img/key.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

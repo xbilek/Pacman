@@ -44,7 +44,7 @@ public class PacmanView implements ComponentView {
 
         try {
             // Načtení obrázku pacmana z disku
-            image = ImageIO.read(new File("data/img/pacman.png"));
+            image = ImageIO.read(new File("lib/img/pacman.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

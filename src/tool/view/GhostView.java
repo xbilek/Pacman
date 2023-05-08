@@ -40,7 +40,7 @@ public class GhostView implements ComponentView {
 
         try {
             // Načtení obrázku ducha z disku
-            image = ImageIO.read(new File("data/img/ghost.png"));
+            image = ImageIO.read(new File("lib/img/ghost.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
